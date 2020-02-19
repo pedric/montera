@@ -19,6 +19,13 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
+// Inline css
+ function hook_critical_css() {
+    $critical_css = file_get_contents( __DIR__ . '/assets/css/critical.css' );
+    echo '<style>' . $critical_css . '</style>';
+}
+add_action('wp_head','hook_critical_css');
+
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate

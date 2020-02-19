@@ -1,0 +1,10 @@
+.skip-link {
+  display: none;
+  &:focus {
+    display: block;
+  }
+}
+
+.header {
+  background-color: #000;
+}
