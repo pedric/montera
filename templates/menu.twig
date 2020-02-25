@@ -1,43 +1,43 @@
-{# {% if menu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
-		</li>
-	{% endfor %}
-	</ul>
-{% endif %} #}
-
-<ul class="vertical medium-horizontal menu align-right" data-responsive-menu="drilldown medium-dropdown">
-  <li>
+<!-- <ul id="menu" class="vertical medium-horizontal menu align-right" data-responsive-menu="drilldown medium-dropdown">
+  <li class="menu-item has-sub-menu">
     <a href="#">Item 1</a>
-    <ul class="vertical menu">
+		<div class="arrow"></div>
+    <ul class="sub-menu">
       <li>
         <a href="#">Item 1A</a>
-        <ul class="vertical menu">
-          <li><a href="#">Item 1A</a></li>
-          <li><a href="#">Item 1B</a></li>
-          <li><a href="#">Item 1C</a></li>
-          <li><a href="#">Item 1D</a></li>
-          <li><a href="#">Item 1E</a></li>
-        </ul>
+      </li>
+			<li>
+        <a href="#">Item 1B</a>
       </li>
       <li><a href="#">Item 1B</a></li>
     </ul>
   </li>
   <li>
     <a href="#">Item 2</a>
-    <ul class="vertical menu">
-      <li><a href="#">Item 2A</a></li>
-      <li><a href="#">Item 2B</a></li>
-    </ul>
   </li>
   <li>
     <a href="#">Item 3</a>
-    <ul class="vertical menu">
-      <li><a href="#">Item 3A</a></li>
-      <li><a href="#">Item 3B</a></li>
-    </ul>
   </li>
-</ul>
+</ul> -->
+
+{% if menu %}
+	<ul id="menu" class="vertical medium-horizontal menu align-right" data-responsive-menu="drilldown medium-dropdown">
+	{% for item in menu.items %}
+		<li class="menu-item {% if item.has_sub %}has-sub-menu{% endif %} {{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+
+			{% if item.children %}
+				<!-- <div class="arrow"></div> -->
+    		<ul class="sub-menu">
+					{% for child in item.children %}
+		          <li>
+		              <a href="{{ child.link }}">{{ child.title }}</a>
+		          </li>
+		      {% endfor %}
+				</ul>
+			{% endif %}
+
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

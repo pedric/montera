@@ -28,8 +28,11 @@
   }
 
   .logo {
+    z-index: 9999;
+
     img {
-      width: 130px;
+      width: 150px;
+      z-index: 9999;
     }
   }
 
@@ -37,10 +40,23 @@
 
     ul {
       li {
+        text-align: left !important;
+        @media print, screen and (min-width: 40em) {
+            text-align: right;
+        }
+
         a {
+          text-align: left !important;
+          @media print, screen and (min-width: 40em) {
+              text-align: right;
+          }
           color: #fff;
         }
       }
     }
   }
 }
+
+// Hide the annoying adminbar, at least during dev
+#wpadminbar { display: none; }
+html.no-js.no-js.no-svg { margin-top: 0px !important; }

@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+{% if posts %}
+
+<section role="main" class="content-wrapper grid-container spacer">
+	<div class="grid-x grid-margin-x">
+
+	 {% for item in posts %}
+			<a href="{{ item.guid }}" class="service-teaser cell large-4" style="background-image:url('{{ item.image.sizes.large }}');">
+				<span>{{ item.post_title }}</span>
+		  </a>
+		{% endfor %}
+
+	</div>
+</section>
+
+{% endif %}
+
+{% endblock %}

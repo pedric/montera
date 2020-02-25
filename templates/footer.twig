@@ -1,1 +1,46 @@
-Copyright {{"now"|date('Y')}}
+<footer class="footer grid-x spacer-padding" id="footer">
+
+  <nav id="nav-footer" class="nav-footer cell" role="navigation">
+
+    {% if menu %}
+    	<ul  class="nav-footer__main-menu">
+    	{% for item in menu.items %}
+    		<li class="{{ item.classes | join(' ') }}">
+    			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+    		</li>
+    	{% endfor %}
+    	</ul>
+    {% endif %}
+
+    {% if contact_menu %}
+    	<ul class="nav-footer__contact">
+    	{% for item in contact_menu.items %}
+    		<li class="{{ item.classes | join(' ') }}">
+    			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+    		</li>
+    	{% endfor %}
+    	</ul>
+    {% endif %}
+
+
+    {% if social_menu %}
+    	<ul class="nav-footer__social">
+    	{% for item in social_menu.items %}
+    		<li class="{{ item.classes | join(' ') }}">
+    			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+    		</li>
+    	{% endfor %}
+    	</ul>
+    {% endif %}
+
+  </nav>
+
+  <div class="footer-logo-container cell">
+    <a class="footer-logo" href="{{site.url}}" rel="home">
+      <img src="{{ site.theme.link }}/assets/img/logo_2.svg">
+    </a>
+  </div>
+
+
+  Copyright {{"now"|date('Y')}}
+</footer>

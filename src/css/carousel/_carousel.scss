@@ -16,6 +16,10 @@
       height: 100%;
       transform: translateY(-50%);
     }
+
+    &.slick-slide {
+      max-height: 90vh;
+    }
   }
 
     .hero-carousel__content {
@@ -31,6 +35,8 @@
     .hero-carousel__title {
       margin-left: 7px;
       color: #fff;
+      line-height: 2.3;
+
       & span {
         display: inline;
         font-weight: 900;
@@ -42,12 +48,18 @@
     }
 
     .hero-carousel__body {
-      padding-top: 8px;
+      // padding-top: 8px;
 
       & p {
+        display: inline-block;
         background: #fff;
         padding: 4px;
         margin-left: -3px;
+        font-size: 0.8rem;
+
+        @media print, screen and (min-width: 40em){
+          font-size: inherit;
+        }
       }
     }
   }

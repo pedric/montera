@@ -1,0 +1,14 @@
+<div class="hero-carousel">
+  {% for slide in slider %}
+  <div class="hero-carousel__slide-wrapper" style="background-image: url({{ slide.image.sizes.large }})">
+    <div class="hero-carousel__content">
+      <a href="{{ slide.link }}"><h2 class="hero-carousel__title"><span>{{ slide.title }}</span></h2></a>
+      <div class="hero-carousel__body">
+        <p>
+          {{ slide.body }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

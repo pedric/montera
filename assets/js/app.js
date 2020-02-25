@@ -6,3 +6,16 @@ $(document).ready(function(){
     slidesToShow: 1
   });
 });
+
+
+var burger = document.getElementById('burger');
+var menu = document.getElementById('nav-main');
+
+var mobileMenuToggle = function() {
+  menu.classList.toggle('active');
+  burger.classList.toggle('active');
+}
+
+burger.addEventListener('click', function() {
+  mobileMenuToggle();
+});

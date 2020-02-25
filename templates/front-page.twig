@@ -1,6 +1,16 @@
 {% extends "base.twig" %}
 
+
 {% block content %}
+
+{% if slider %}
+	{% include 'carousel.twig' %}
+{% endif %}
+
+{% if teaser %}
+	{% include 'services-tease.twig' %}
+{% endif %}
+
 	<section role="main" class="content-wrapper grid-container spacer">
 		<div class="grid-x">
 		  <div class="cell large-6 {{sidebar_class}}">
@@ -11,4 +21,5 @@
 		  </div>
 		</div>
 	</section>
+
 {% endblock %}

@@ -1,0 +1,33 @@
+.footer {
+  background-color: #000;
+
+  .footer-logo-container {
+    padding: 1rem 0;
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 250px;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      padding: 4px;
+      text-align: center !important;
+
+      a {
+        text-align: center !important;
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

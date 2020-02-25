@@ -14,8 +14,10 @@
  */
 $context = Timber::context();
 $context['posts'] = new Timber\PostQuery();
-$templates        = array( 'index.twig' );
-if ( is_home() ) {
-	array_unshift( $templates, 'front-page.twig', 'home.twig' );
-}
-Timber::render( $templates, $context );
+
+$context['teaser'] = new Timber\Term();
+
+$args = 'category_name=tjanster';
+// $context['posts'] = Timber::get_posts($args);
+
+Timber::render( 'category.twig', $context );
